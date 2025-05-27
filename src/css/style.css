@@ -72,10 +72,10 @@ img {
 .header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+
 }
 
-.header h2 {
+.header logo {
     font-size: 4.5rem;
     position: relative;
     z-index: 2;

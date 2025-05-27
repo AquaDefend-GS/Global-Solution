@@ -1,16 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 /* Reset CSS */
-
-body {
-    font-family: 'Monteserrat';
-}
-
-
-h1, h2, h3, h4 {
-    font-family: 'Monteserrat';
-    line-height: 1;
-}
 
 * {
     margin: 0;
@@ -61,3 +49,71 @@ img {
 
 
 /* ----------------- Fim Da Formatação Base CSS -----------------*/
+/* ----------------- Hero da página -------------------------- */
+
+.hero{
+    width: 100%;
+    min-height: 100dvh;
+    padding: 3rem;
+    background-image: var(--gradient), url(../images/capa1.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.banner #image {
+    width: 100%;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    font-size: 4.5rem;
+    position: relative;
+    z-index: 2;
+}
+span {
+    color: var(--color-blue-100);
+}
+
+.header-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.sanduiche {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    display: none;
+}
+
+.barra {
+    display: block;
+    width: 3rem;
+    height: .3rem;
+    background-color: var(--color-light);
+    margin: .5rem auto;
+    border-radius: var(--radius);
+    transition: .5s;
+}
+
+.header-footer h1 {
+    font-size: clamp(3.5rem, 8vmax, 10rem);
+    
+}
+
+.header-footer p {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-left: .5rem;
+}
+/* ----------------- Fim Hero da página -------------------------- */

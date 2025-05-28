@@ -601,6 +601,90 @@ img {
 
 /* ----------------- Fim Seção 4: Público-Alvo ---------------------- */
 
+/* ----------------- Seção 5: Benefícios (COM EFEITOS) -------------------------- */
+.secao-beneficios {
+    padding: 8rem 0;
+    background-color: var(--color-gray-100);
+}
+
+.secao-beneficios .secao-subtitulo {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    color: #555;
+    text-align: center;
+    max-width: 850px;
+    margin: -3rem auto 6rem auto;
+    line-height: 1.7;
+}
+
+.beneficios-lista-alternada {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.beneficio-item-alternado {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    background-color: #ffffff;
+    padding: 3.5rem; 
+    border-radius: var(--radius);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07); 
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); 
+    overflow: hidden; /
+}
+
+.beneficio-item-alternado:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12); 
+}
+
+.beneficio-item-alternado.imagem-direita {
+    flex-direction: row-reverse;
+}
+
+.beneficio-visual {
+    flex: 1 1 40%;
+    max-width: 450px;
+    border-radius: var(--radius); /* Adiciona borda arredondada ao container da imagem */
+    overflow: hidden; /* <<< ADICIONADO: Para conter o zoom da imagem */
+}
+
+.beneficio-visual img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius); /* Mantém borda na imagem, caso o overflow não seja suficiente ou para consistência */
+    object-fit: cover;
+    max-height: 350px;
+    display: block; /* Garante que a transição funcione bem */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* <<< ADICIONADO: Transição para a imagem */
+}
+
+.beneficio-item-alternado:hover .beneficio-visual img {
+    transform: scale(1.08); /* <<< EFEITO: Leve zoom na imagem ao passar o mouse no card */
+}
+
+.beneficio-texto {
+    flex: 1 1 55%;
+}
+
+.beneficio-titulo {
+    font-family: var(--font-primary);
+    font-size: 2.4rem;
+    color: var(--color-blue-800);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.beneficio-descricao {
+    font-family: var(--font-secondary);
+    font-size: 1.7rem;
+    color: var(--color-dark);
+    line-height: 1.75;
+}
+/* ----------------- Fim Seção 5: Benefícios ---------------------- */
+
 
 
 @keyframes gridAnimation {

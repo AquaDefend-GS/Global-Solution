@@ -1,119 +1,478 @@
 /* Reset CSS */
-
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 
 /* Variáveis CSS */
-
-
-:root{
+:root {
     --color-light: #f1f1f1;
     --color-dark: #333333;
     --color-blue-100: rgb(100, 150, 200);
     --color-blue-800: rgb(0, 45, 90);
+    --color-blue-600: #0056b3; /* Azul para destaque menor com bom contraste */
+    --color-blue-annotation-bg: #e9f3fb; /* Azul claro para fundo da "anotação" */
+    --color-gray-100: #f8f9fa; /* Fundo da seção problema */
     --radius: 8px;
-    --gradient: linear-gradient(to top, rgba(0, 0, 0, .6), rgba(0, 0, 0, .3));
+    --gradient: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, .45)); /* Mais escuro no gradiente */
 }
 
 /* ------------------- Formatação Base CSS ------------------ */
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
-body{
-    font-size: 1.6rem;
+body {
+    font-size: 1.6rem; /* 16px */
+    color: var(--color-dark);
+    line-height: 1.65;
 }
 
-a{
+a {
     text-decoration: none;
-    color: var(--color-light);
-    font-weight: 900;
-    transition: color .5s;
-}
-
-a:hover {
-    color: var(--color-blue-100);
-}
-
-ul, ol {
-    list-style: none;
+    font-weight: 600; /* Ajustado para links em geral */
+    transition: color .3s ease;
 }
 
 img {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    animation: gridAnimation both;
+    animation-timeline: view(130% 5%); 
+}
 
 /* ----------------- Fim Da Formatação Base CSS -----------------*/
-/* ----------------- Hero da página -------------------------- */
 
-.hero{
+/* ----------------- Hero da página -------------------------- */
+.hero {
     width: 100%;
-    min-height: 100dvh;
-    padding: 3rem;
-    background-image: var(--gradient), url(../images/capa1.jpg); 
+    min-height: 100dvh; /* Altura total da tela */
+    padding: 2.5rem; /* Padding ajustado */
+    background-image: var(--gradient), url(../images/capa1.jpg); /* Certifique-se que o caminho está correto */
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50%;
+    background-position: center;
     color: var(--color-light);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center; /* Centraliza conteúdo se for menor que a altura */
 }
 
-.banner #image {
-    width: 100%;
-}
-
-.header{
+.header {
+    width: 100%; /* Header ocupa toda a largura */
+    max-width: 1200px; /* Limita largura do conteúdo do header */
+    padding: 1rem 0; /* Padding vertical para o header */
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
+    position: relative; /* Para o menu mobile */
+    z-index: 100;
 }
 
-.header logo {
-    font-size: 4.5rem;
-    position: relative;
-    z-index: 2;
-}
-span {
-    color: var(--color-blue-100);
+.header .logo {
+    max-width: 180px; /* Tamanho do logo */
+    height: auto;
 }
 
 .header-menu {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem; /* Espaço entre itens do menu */
 }
 
-.sanduiche {
-    cursor: pointer;
+.item-menu {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--color-light);
+    padding: 0.8rem 0.5rem;
     position: relative;
-    z-index: 2;
+}
+.item-menu:hover,
+.item-menu.active {
+    color: var(--color-blue-100);
+}
+.item-menu::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-blue-100);
+    transition: width 0.3s ease;
+}
+.item-menu:hover::after,
+.item-menu.active::after {
+    width: calc(100% - 1rem);
+}
+
+
+.hero-content { /* Conteúdo textual principal do Hero */
+    text-align: center;
+    padding: 2rem 0; /* Espaçamento para o texto central */
+}
+
+.hero-content h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content h1 span { /* Span dentro do H1 do Hero */
+    color: var(--color-blue-100);
+}
+
+.hero-content p {
+    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+    font-weight: 400; /* Texto de apoio mais leve */
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-footer-placeholder { /* Apenas para empurrar o conteúdo para cima se necessário */
+    min-height: 50px;
+}
+/* ----------------- Fim Hero da página -------------------------- */
+
+/* ----------------- Estilos Gerais para Seções de Conteúdo -----------------*/
+.secao-titulo {
+    font-size: 3.2rem;
+    color: var(--color-blue-800);
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.secao-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 4px;
+    background-color: var(--color-blue-100);
+    border-radius: var(--radius);
+}
+
+/* ----------------- Seção 1: O Problema -------------------------- */
+.secao-problema {
+    padding: 8rem 0; /* Aumentado padding vertical */
+    background-color: var(--color-gray-100);
+}
+
+.problema-conteudo {
+    display: flex;
+    gap: 5rem;
+    align-items: flex-start;
+}
+
+.problema-texto {
+    flex: 1 1 60%;
+}
+
+.problema-texto > p { /* Parágrafos iniciais e o último */
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-dark);
+    line-height: 1.75;
+}
+.problema-texto > p:last-of-type { /* Estilo para o parágrafo final da AquaDefend */
+    margin-top: 4rem;
+    font-style: italic;
+    font-size: 1.7rem;
+    color: #555; /* Um cinza um pouco mais claro para o itálico */
+}
+
+.problema-texto .destaque {
+    font-weight: 700;
+    color: var(--color-blue-800);
+    background-color: rgba(0, 45, 90, 0.07);
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+}
+
+.problema-texto .destaque-menor {
+    font-weight: 600;
+    color: var(--color-blue-600);
+}
+
+.subtitulo-problema { /* "As Dores que Buscamos Sanar:" */
+    font-size: 2.8rem;
+    color: var(--color-blue-800);
+    margin-top: 4.5rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.dor-item { /* Cards Azuis */
+    background-color: var(--color-blue-annotation-bg);
+    padding: 2.5rem 3rem;
+    border-radius: var(--radius);
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 12px rgba(0, 70, 140, 0.09);
+}
+
+.dor-titulo {
+    font-size: 2.1rem;
+    color: var(--color-blue-800);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.dor-descricao {
+    font-size: 1.75rem;
+    color: var(--color-dark);
+    line-height: 1.75;
+}
+
+.divisor-sutil,
+.problema-texto ul,
+.icone-problema {
     display: none;
 }
 
-.barra {
-    display: block;
-    width: 3rem;
-    height: .3rem;
-    background-color: var(--color-light);
-    margin: .5rem auto;
+.problema-imagem {
+    flex: 1 1 35%;
+    display: flex;
+    flex-direction: column; /* Empilha as imagens */
+    align-items: stretch;   /* Imagens ocupam a largura */
+    gap: 7.5rem;           /* Espaço entre as imagens */
+}
+
+.problema-imagem img {
     border-radius: var(--radius);
-    transition: .5s;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-height: 200px; 
+    object-fit: cover;
+    cursor: pointer; 
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; 
+    position: relative;
+    animation: gridAnimation both;
+    animation-timeline: view(70% 5%); 
 }
 
-.header-footer h1 {
-    font-size: clamp(3.5rem, 8vmax, 10rem);
+.problema-imagem img:hover {
+    transform: translateY(-10px) scale(1.05); /* <<< ADICIONADO: Move para cima e aumenta ligeiramente */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2); /* <<< ADICIONADO: Sombra mais pronunciada para dar profundidade */
+    z-index: 10; /* <<< ADICIONADO: Garante que a imagem com hover fique acima das outras, se houver sobreposição visual */
+}
+
+/* ----------------- Fim Seção 1: O Problema -------------------------- */
+
+/* ----------------- Rodapé Principal -------------------------------- */
+.rodape-principal {
+    background-color: var(--color-blue-800); /* Cor de fundo do rodapé */
+    color: var(--color-light);
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 6rem; /* Espaço acima do rodapé */
+}
+.rodape-principal p {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+.rodape-principal p:last-child {
+    margin-bottom: 0;
+}
+
+/* ----------------- Responsividade -------------------------- */
+@media (max-width: 992px) { /* Tablets */
+    .problema-conteudo {
+        gap: 3.5rem;
+        align-items: center;
+    }
+    .problema-texto { flex-basis: 55%; }
+    .problema-imagem { flex-basis: 40%; }
+    .problema-imagem img { max-height: 170px; }
+
+    .secao-titulo { font-size: 3rem; }
+    .subtitulo-problema { font-size: 2.5rem; }
+    .dor-titulo { font-size: 2rem; }
+    .dor-item { padding: 2rem 2.5rem; }
+    .problema-texto > p, .dor-descricao { font-size: 1.7rem; }
+}
+
+@media (max-width: 850px) { /* Breakpoint para menu mobile */
+    .header-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100dvh;
+        background-color: rgba(0, 45, 90, 0.98); /* Fundo do menu mobile */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem; /* Espaçamento entre itens no menu mobile */
+        transform: translateX(100%);
+        transition: transform .4s cubic-bezier(0.23, 1, 0.32, 1); /* Transição suave */
+        z-index: 999; /* Abaixo do sanduíche mas acima do resto */
+        padding-top: 6rem; /* Para não ficar atrás do header fixo, se houver */
+    }
+    .header-menu.ativo {
+        transform: translateX(0);
+    }
+    .header .item-menu { /* Estilo dos itens no menu mobile */
+        font-size: 2.4rem; /* Maiores para toque */
+        color: var(--color-light);
+        padding: 1rem 0;
+        width: 80%;
+        text-align: center;
+    }
+    .header .item-menu:hover,
+    .header .item-menu.active {
+        color: var(--color-blue-100);
+        background-color: rgba(100, 150, 200, 0.1);
+        border-radius: var(--radius);
+    }
+    .item-menu::after { /* Remover sublinhado no mobile */
+        display: none;
+    }
+    .sanduiche {
+        display: block;
+        z-index: 1000; /* Acima do menu */
+        padding: 0.5rem; /* Área de toque maior */
+    }
+    .sanduiche.ativo .barra:nth-child(1) { transform: translateY(0.9rem) rotate(45deg); }
+    .sanduiche.ativo .barra:nth-child(2) { opacity: 0; }
+    .sanduiche.ativo .barra:nth-child(3) { transform: translateY(-0.9rem) rotate(-45deg); }
+}
+
+@media (max-width: 768px) { /* Mobile Geral */
+    body { font-size: 1.5rem; } /* Ajuste base de fonte para mobile */
+    .container { padding: 0 1.5rem; }
+    .secao-titulo { font-size: 2.6rem; margin-bottom: 4rem; }
+
+    .problema-conteudo {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .problema-texto {
+        flex-basis: 100%;
+        order: 2; /* Texto aparece depois da imagem em mobile */
+        margin-top: 3rem; /* Espaço se imagem vier primeiro */
+    }
+     .problema-imagem {
+        flex-basis: 100%;
+        width: 100%;
+        max-width: 480px; /* Limite da largura da coluna de imagem */
+        order: 1; /* Imagem primeiro em mobile */
+        margin: 0 auto; /* Centralizar coluna de imagem */
+        gap: 1.5rem; /* Espaço entre imagens */
+    }
+    .problema-imagem img { max-height: 220px; }
+
+    .subtitulo-problema { font-size: 2.3rem; margin-bottom: 2.5rem; }
+    .dor-item { padding: 2rem; margin-bottom: 2.5rem; }
+    .dor-titulo { font-size: 1.9rem; }
+    .problema-texto > p, .dor-descricao { font-size: 1.6rem; line-height: 1.7; }
+}
+
+@media (max-width: 480px) { /* Celulares menores */
+    .secao-problema { padding: 6rem 0; } /* Aumentado padding */
+    .secao-titulo { font-size: 2.2rem; }
+    .subtitulo-problema { font-size: 2.1rem; }
+    .dor-titulo { font-size: 1.8rem; }
+    .dor-item { padding: 1.8rem; } /* Padding ajustado */
+    .problema-texto > p, .dor-descricao { font-size: 1.55rem; }
+    .problema-imagem img { max-height: 180px; }
+}
+
+/* ----------------- Seção 2: Tecnologias Utilizadas -------------------------- */
+
+.secao-tecnologias {
+    padding: 8rem 0; 
+    background-color: #ffffff; 
+}
+
+.secao-tecnologias .secao-subtitulo { 
+    font-size: 1.8rem;
+    color: #555; 
+    text-align: center;
+    max-width: 750px; 
+    margin: -3rem auto 5rem auto; 
+    line-height: 1.6;
+}
+
+.tecnologias-grid {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 3rem; 
+    justify-content: center; 
+}
+
+.tecnologia-item {
+    background-color: #fff; 
+    border: 1px solid #e0e0e0; 
+    border-radius: var(--radius);
+    padding: 3rem 2.5rem; 
+    flex: 1 1 300px;
+    max-width: 360px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    text-align: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tecnologia-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tecnologia-icone {
+    font-size: 4rem; 
+    color: var(--color-blue-600); 
+    margin-bottom: 2rem;
+}
+.tecnologia-icone-img {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem auto;
+    }
     
+
+
+.tecnologia-titulo {
+    font-family: var(--font-primary);
+    font-size: 2rem; /* Tamanho do título da tecnologia */
+    color: var(--color-blue-800);
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
-.header-footer p {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-left: .5rem;
+.tecnologia-descricao {
+    font-family: var(--font-secondary);
+    font-size: 1.55rem; /* Tamanho da descrição */
+    color: var(--color-dark);
+    line-height: 1.65;
 }
-/* ----------------- Fim Hero da página -------------------------- */
+/* ----------------- Fim Seção 2: Tecnologias Utilizadas ---------------------- */
+
+
+@keyframes gridAnimation {
+    from{
+        opacity: 0;
+        scale: .7;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}

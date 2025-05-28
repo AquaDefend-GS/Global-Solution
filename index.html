@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaDefend - Prevenção de Enchentes</title>
 
+    <!-- Chamando o CSS Fonts -->
     <link rel="stylesheet" href="./src/css/fonts.css">
+    <!-- Chamando o CSS Style -->
     <link rel="stylesheet" href="./src/css/style.css">
+
     </head>
+    <!-------------------- Hero da página ----------------------->
 <body>
     <section class="hero" id="home">
         <header class="header">
@@ -32,6 +36,9 @@
             <h1>Aqua-<span>Defend</span></h1>
             <p>Tecnologia Proativa Contra a Tragédia Anunciada das Enchentes</p>
         </div>
+        <!-------------------- Fim Hero da página ----------------------->
+
+        <!-------------------- Seção Problema ----------------------->
         <div class="hero-footer-placeholder" style="height: 50px;"></div> </section>
     <section class="secao-problema" id="problema">
         <div class="container">
@@ -74,6 +81,9 @@
             </div>
         </div>
     </section>
+    <!-------------------- Fim Seção Problema ----------------------->
+
+    <!-------------------- Seção Tecnologia ----------------------->
     <section class="secao-tecnologias" id="tecnologias">
         <div class="container">
             <h2 class="secao-titulo">Tecnologias Utilizadas no AquaDefend</h2>
@@ -86,39 +96,48 @@
                     <p class="tecnologia-descricao">Simulação de dados de uma rede de sensores IoT (Internet das Coisas) para coletar informações pluviométricas e hidrológicas cruciais, como níveis de rios e volume de chuva, em tempo real.</p>
                 </div>
                 <div class="tecnologia-item">
-                    <div class="tecnologia-icone">[Ícone Satélite/API]</div>
+                    <img src="./src/images/satelite.png" alt="satelite" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
                     <h3 class="tecnologia-titulo">Dados de Satélite e APIs Públicas</h3>
                     <p class="tecnologia-descricao">Utilização (ou simulação) de dados geoespaciais de satélites (inspirados no INPE) e informações de APIs meteorológicas públicas para uma visão macro e detalhada das condições climáticas.</p>
                 </div>
                 <div class="tecnologia-item">
-                    <div class="tecnologia-icone">[Ícone IA]</div>
+                    <img src="./src/images/ia.png" alt="IA" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
                     <h3 class="tecnologia-titulo">Inteligência Artificial e Modelos Preditivos</h3>
                     <p class="tecnologia-descricao">Demonstração de como modelos preditivos, potencialmente alavancados por IA, analisariam dados simulados complexos para identificar riscos iminentes de enchentes com maior antecedência.</p>
                 </div>
                 <div class="tecnologia-item">
-                    <div class="tecnologia-icone">[Ícone Web/Mapa]</div>
+                    <img src="./src/images/mapa.png" alt="mapa" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
                     <h3 class="tecnologia-titulo">Plataforma Web Interativa e Mapas</h3>
                     <p class="tecnologia-descricao">Interface front-end responsiva (o foco deste projeto) que apresenta os dados de forma clara, utilizando APIs de mapas (como Leaflet/OpenStreetMap) para visualização de alertas e áreas de risco.</p>
                 </div>
                 <div class="tecnologia-item">
-                    <div class="tecnologia-icone">[Ícone Alerta]</div>
+                    <img src="./src/images/alerta.png" alt="alerta" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
                     <h3 class="tecnologia-titulo">Sistema de Alertas Multicanal</h3>
                     <p class="tecnologia-descricao">Simulação visual de como alertas automáticos e geolocalizados seriam enviados para a população (semelhante a notificações push ou SMS) de forma clara e acionável.</p>
                 </div>
                 <div class="tecnologia-item">
-                    <div class="tecnologia-icone">[Ícone Big Data]</div>
+                    <img src="./src/images/big-data.png" alt="big-data" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
                     <h3 class="tecnologia-titulo">Análise de Big Data</h3>
                     <p class="tecnologia-descricao">Conceituação de como grandes volumes de dados (simulados) seriam processados para otimizar rotas de evacuação, identificar padrões e melhorar a tomada de decisão da Defesa Civil.</p>
                 </div>
             </div>
         </div>
     </section>
+    <!-------------------- Seção Tecnologia ----------------------->
 
+    <!-------------------- Fim Rodapé  ----------------------->
     <footer class="rodape-principal" style="background-color: var(--color-dark); color: var(--color-light); text-align: center; padding: 2rem 0; margin-top: 4rem;">
         <p>&copy; 2025 AquaDefend. Todos os direitos reservados.</p>
         <p>Desenvolvido como parte da Global Solution FIAP.</p>
     </footer>
+    <!-------------------- FIm Rodapé  ----------------------->
 
+        <!-- Chamando o JS externo -->
     <script src="./src/js/script.js"></script>
 </body>
 </html>

@@ -442,26 +442,25 @@ img {
     margin-bottom: 2rem;
 }
 .tecnologia-icone-img {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 1.5rem auto;
-    }
-    
-
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem auto;
+    display: block;
+}
 
 .tecnologia-titulo {
     font-family: var(--font-primary);
     font-size: 2rem; /* Tamanho do título da tecnologia */
     color: var(--color-blue-800);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-weight: 700;
 }
 
 .tecnologia-descricao {
-    font-family: var(--font-secondary);
-    font-size: 1.55rem; /* Tamanho da descrição */
+    font-size: 2rem; 
     color: var(--color-dark);
-    line-height: 1.65;
+    line-height: 2;
+    text-align: center;
 }
 /* ----------------- Fim Seção 2: Tecnologias Utilizadas ---------------------- */
 

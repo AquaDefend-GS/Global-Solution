@@ -3,45 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaDefend</title>
+    <title>AquaDefend - Prevenção de Enchentes</title>
 
-    <!-- Chamando CSS Fonte -->
+    <!-- Chamando o CSS Fonts -->
     <link rel="stylesheet" href="./src/css/fonts.css">
-
-    <!-- Chamada para o CSS style -->
+    <!-- Chamando o CSS Style -->
     <link rel="stylesheet" href="./src/css/style.css">
-</head>
-<body>
+
+    </head>
     <!-------------------- Hero da página ----------------------->
-    <section class="hero">
+<body>
+    <section class="hero" id="home">
         <header class="header">
-            <img class="logo" src="./src/images/logo1.png" alt="logo">
+            <img class="logo" src="./src/images/logo1.png" alt="Logo AquaDefend">
             <nav>
                 <ul class="header-menu">
-                    <li><a href="" class="item-menu">Home</a></li>
-                    <li><a href="" class="item-menu">Enchentes Solutions</a></li>
-                    <li><a href="" class="item-menu">Tecnologias Usadas</a></li>
-                    <li><a href="" class="item-menu">Benefícios</a></li>
-                    <li><a href="" class="item-menu">Contato</a></li>
+                    <li><a href="#home" class="item-menu active">Home</a></li>
+                    <li><a href="#problema" class="item-menu">O Problema</a></li>
+                    <li><a href="#tecnologias" class="item-menu">Tecnologias</a></li>
+                    <li><a href="#objetivos" class="item-menu">Objetivos</a></li>
+                    <li><a href="#publico-alvo" class="item-menu">Público Alvo</a></li>
+                    <li><a href="#beneficios" class="item-menu">Benefícios</a></li>
+                    <li><a href="#contato" class="item-menu">Contato</a></li>
                 </ul>
             </nav>
-            <!-- Botão sanduíche -->
             <div class="sanduiche">
                 <span class="barra"></span>
                 <span class="barra"></span>
                 <span class="barra"></span>
             </div>
         </header>
-        <!-- Fim header da página -->
-         <footer class="header-footer">
+        <div class="hero-content"> 
             <h1>Aqua-<span>Defend</span></h1>
             <p>Tecnologia Proativa Contra a Tragédia Anunciada das Enchentes</p>
-         </footer>
+        </div>
+        <div class="hero-footer-placeholder" style="height: 50px;"></div> 
     </section>
     <!-------------------- Fim Hero da página ----------------------->
-    
 
-    <!-- Chamando o JS externo -->
+    <!-------------------- Seção Problema ----------------------->
+    <section class="secao-problema" id="problema">
+        <div class="container">
+            <h2 class="secao-titulo">O Problema Alarmante das Enchentes no Brasil</h2>
+            <div class="problema-conteudo">
+                <div class="problema-texto">
+                    <p>As enchentes deixaram de ser meros eventos climáticos para se tornarem tragédias recorrentes e anunciadas em nosso país. Dados do <span class="destaque">Atlas Brasileiro de Desastres Naturais</span> são um duro lembrete da nossa vulnerabilidade: entre 1991 e 2022, foram mais de <span class="destaque">21 mil inundações</span>, impactando a vida de <span class="destaque">110 milhões de pessoas</span>.</p>
+                    <p>Os anos de 2023 e 2024 agravaram este cenário, com milhões de brasileiros afetados e centenas de vidas perdidas, como vimos na devastadora situação do Rio Grande do Sul. Esta realidade sublinha a urgência de soluções eficazes e proativas.</p>
+
+                    <h3 class="subtitulo-problema">As Dores que Buscamos Sanar:</h3>
+
+                    <div class="dor-item">
+                        <h4 class="dor-titulo">Falta de informações rápidas e confiáveis</h4>
+                        <p class="dor-descricao">A ausência de alertas ágeis e precisos sobre alagamentos transforma momentos críticos em verdadeiro caos. Alarmantemente, dados da pesquisa Datafolha indicam que <span class="destaque-menor">6 em cada 10 brasileiros nunca receberam qualquer tipo de alerta de risco</span>.</p>
+                    </div>
+
+                    <hr class="divisor-sutil"> 
+
+                    <div class="dor-item">
+                        <h4 class="dor-titulo">Dificuldade na evacuação preventiva</h4>
+                        <p class="dor-descricao">Mais de <span class="destaque-menor">8 milhões de brasileiros residem em áreas de risco</span>, frequentemente desprovidas de infraestrutura básica de drenagem. Essa realidade agrava a vulnerabilidade e torna a evacuação um desafio complexo e perigoso durante eventos extremos.</p>
+                    </div>
+
+                    <hr class="divisor-sutil"> 
+
+                    <div class="dor-item">
+                        <h4 class="dor-titulo">Carência de sistemas integrados e eficazes</h4>
+                        <p class="dor-descricao">Existe uma lacuna significativa em sistemas que verdadeiramente unam dados meteorológicos complexos, modelagem preditiva avançada e, crucialmente, alertas direcionados que cheguem de forma clara e eficaz aos moradores que precisam da informação.</p>
+                    </div>
+
+                    <p>A AquaDefend nasce para preencher a lacuna entre a previsão avançada e a ação comunitária informada, transformando dados em proteção.</p>
+                </div>
+                <div class="problema-imagem">
+                    <img src="./src/images/problema1.jpg" alt="Imagem ilustrativa de enchente afetando área urbana">
+                    <img src="./src/images/problema2.jpg" alt="Imagem ilustrativa de resgate em enchente">
+                    <img src="./src/images/problema3.jpg" alt="Imagem aérea de cidade inundada">
+                    <img src="./src/images/problema4.jpg" alt="Imagem aérea de cidade inundada">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------- Fim Seção Problema ----------------------->
+
+    <!-------------------- Seção Tecnologia ----------------------->
+    <section class="secao-tecnologias" id="tecnologias">
+        <div class="container">
+            <h2 class="secao-titulo">Tecnologias Utilizadas no AquaDefend</h2>
+            <p class="secao-subtitulo">Para demonstrar uma solução robusta, nosso protótipo simula a integração de tecnologias de ponta para monitoramento, análise e comunicação eficiente:</p>
+            <div class="tecnologias-grid">
+                <div class="tecnologia-item">
+                   <img src="./src/images/iot.png" alt="Ícone de Sensores IoT" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
+                    <h3 class="tecnologia-titulo">Sensores IoT e Monitoramento em Tempo Real</h3>
+                    <p class="tecnologia-descricao">Simulação de dados de uma rede de sensores IoT (Internet das Coisas) para coletar informações pluviométricas e hidrológicas cruciais, como níveis de rios e volume de chuva, em tempo real.</p>
+                </div>
+                <div class="tecnologia-item">
+                    <img src="./src/images/satelite.png" alt="satelite" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
+                    <h3 class="tecnologia-titulo">Dados de Satélite e APIs Públicas</h3>
+                    <p class="tecnologia-descricao">Utilização (ou simulação) de dados geoespaciais de satélites (inspirados no INPE) e informações de APIs meteorológicas públicas para uma visão macro e detalhada das condições climáticas.</p>
+                </div>
+                <div class="tecnologia-item">
+                    <img src="./src/images/ia.png" alt="IA" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
+                    <h3 class="tecnologia-titulo">Inteligência Artificial e Modelos Preditivos</h3>
+                    <p class="tecnologia-descricao">Demonstração de como modelos preditivos, potencialmente alavancados por IA, analisariam dados simulados complexos para identificar riscos iminentes de enchentes com maior antecedência.</p>
+                </div>
+                <div class="tecnologia-item">
+                    <img src="./src/images/mapa.png" alt="mapa" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
+                    <h3 class="tecnologia-titulo">Plataforma Web Interativa e Mapas</h3>
+                    <p class="tecnologia-descricao">Interface front-end responsiva (o foco deste projeto) que apresenta os dados de forma clara, utilizando APIs de mapas (como Leaflet/OpenStreetMap) para visualização de alertas e áreas de risco.</p>
+                </div>
+                <div class="tecnologia-item">
+                    <img src="./src/images/alerta.png" alt="alerta" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
+                    <h3 class="tecnologia-titulo">Sistema de Alertas Multicanal</h3>
+                    <p class="tecnologia-descricao">Simulação visual de como alertas automáticos e geolocalizados seriam enviados para a população (semelhante a notificações push ou SMS) de forma clara e acionável.</p>
+                </div>
+                <div class="tecnologia-item">
+                    <img src="./src/images/big-data.png" alt="big-data" class="tecnologia-icone-img">
+                    <div class="tecnologia-icone"></div>
+                    <h3 class="tecnologia-titulo">Análise de Big Data</h3>
+                    <p class="tecnologia-descricao">Conceituação de como grandes volumes de dados (simulados) seriam processados para otimizar rotas de evacuação, identificar padrões e melhorar a tomada de decisão da Defesa Civil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------- Fim Seção Tecnologia ----------------------->
+
+    <!-------------------- Seção Objetivos ----------------------->
+     <section class="secao-objetivos" id="objetivos">
+        <div class="container">
+            <h2 class="secao-titulo">Nossos Objetivos com AquaDefend</h2>
+            <p class="secao-subtitulo">Com a demonstração desta interface, visamos ilustrar como a tecnologia pode ser uma aliada poderosa na transformação da gestão de riscos de enchentes no Brasil.</p>
+            <div class="objetivos-grid">
+                <div class="objetivo-item">
+                    <img src="./src/images/protecao.png" alt="Ícone Proteção" class="objetivo-icone-img">
+                    <h3 class="objetivo-titulo">Proteger Vidas e Patrimônios</h3>
+                    <p class="objetivo-descricao">Demonstrar como um sistema preventivo e de alerta rápido pode minimizar os impactos humanos e materiais catastróficos das enchentes.</p>
+                </div>
+                <div class="objetivo-item">
+                    <img src="./src/images/informacao.png" alt="Ícone Informação" class="objetivo-icone-img">
+                    <h3 class="objetivo-titulo">Informação Ágil e Confiável</h3>
+                    <p class="objetivo-descricao">Ilustrar a entrega de dados e alertas em tempo real (simulados) para a população e Defesa Civil, promovendo ações coordenadas e eficazes.</p>
+                </div>
+                <div class="objetivo-item">
+                    <img src="./src/images/prevencao.png" alt="Ícone Prevenção" class="objetivo-icone-img">
+                    <h3 class="objetivo-titulo">Fomentar a Prevenção Proativa</h3>
+                    <p class="objetivo-descricao">Mudar o paradigma da resposta reativa para uma cultura de antecipação, preparação e mitigação dos riscos de inundações.</p>
+                </div>
+                <div class="objetivo-item">
+                    <img src="./src/images/comunidade.png" alt="Ícone Comunidade" class="objetivo-icone-img">
+                    <h3 class="objetivo-titulo">Capacitação Comunitária</h3>
+                    <p class="objetivo-descricao">Mostrar como a tecnologia pode engajar e empoderar os cidadãos com informações e ferramentas para sua autoproteção e resiliência.</p>
+                </div>
+                <div class="objetivo-item">
+                    <img src="./src/images/resiliencia.png" alt="Ícone Resiliência" class="objetivo-icone-img">
+                    <h3 class="objetivo-titulo">Promover Resiliência Urbana</h3>
+                    <p class="objetivo-descricao">Contribuir visualmente para o conceito de cidades mais seguras, inteligentes e preparadas para enfrentar eventos climáticos extremos.</p>
+                </div>
+                <div class="objetivo-item">
+                    <img src="./src/images/inovacao.png" alt="Ícone Inovação" class="objetivo-icone-img">
+                    <h3 class="objetivo-titulo">Inovação na Gestão de Riscos</h3>
+                    <p class="objetivo-descricao">Evidenciar o potencial da integração tecnológica (IoT, IA, Big Data) na modernização e eficácia da gestão de desastres naturais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------- Fim Seção Objetivos  ----------------------->
+
+    <!-------------------- Seção Publico Alvo  ----------------------->
+    <section class="secao-publico-alvo" id="publico-alvo">
+        <div class="container">
+            <h2 class="secao-titulo">O público-alvo que será impactado com o AquaDefend</h2>
+            <p class="secao-subtitulo">Nossa interface visa ilustrar o impacto positivo da tecnologia preventiva para diversos segmentos da sociedade brasileira, fortalecendo a segurança de todos.</p>
+            
+            <div class="publico-alvo-lista"> 
+
+                <div class="publico-linha-item">
+                    <div class="publico-linha-icone-wrapper">
+                        <img src="./src/images/cidadaos.png" alt="Ícone Cidadãos e Comunidades" class="publico-linha-icone">
+                    </div>
+                    <div class="publico-linha-texto">
+                        <h3 class="publico-linha-titulo">Cidadãos e Comunidades</h3>
+                        <p class="publico-linha-descricao">Indivíduos e famílias, especialmente aqueles em áreas urbanas e de risco, que se beneficiariam de alertas antecipados, informações claras sobre níveis de rios e rotas de evacuação seguras (simuladas).</p>
+                    </div>
+                </div>
+
+                <div class="publico-linha-item">
+                    <div class="publico-linha-icone-wrapper">
+                        <img src="./src/images/defesa-civil.png" alt="Ícone Defesa Civil e Órgãos Públicos" class="publico-linha-icone">
+                    </div>
+                    <div class="publico-linha-texto">
+                        <h3 class="publico-linha-titulo">Defesa Civil e Órgãos Públicos</h3>
+                        <p class="publico-linha-descricao">Gestores e equipes de resposta que utilizariam a plataforma (em sua versão completa) como um centro de comando para monitorar riscos, disseminar alertas e coordenar ações preventivas e emergenciais com maior eficácia.</p>
+                    </div>
+                </div>
+
+                <div class="publico-linha-item">
+                    <div class="publico-linha-icone-wrapper">
+                        <img src="./src/images/empresas.png" alt="Ícone Empresas e Setor Produtivo" class="publico-linha-icone">
+                    </div>
+                    <div class="publico-linha-texto">
+                        <h3 class="publico-linha-titulo">Empresas e Setor Produtivo</h3>
+                        <p class="publico-linha-descricao">Negócios e operadores de infraestrutura crítica localizados em áreas vulneráveis, que poderiam usar as informações (simuladas) para proteger seus ativos, planejar a continuidade e minimizar perdas econômicas.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-------------------- Fim Seção Publico Alvo ----------------------->
+
+    <!-------------------- Seção Beneficios ----------------------->
+
+        <section class="secao-beneficios" id="beneficios">
+        <div class="container">
+            <h2 class="secao-titulo">Benefícios da Solução AquaDefend</h2>
+            <p class="secao-subtitulo">Ao demonstrar uma abordagem proativa e integrada, AquaDefend ilustra como podemos alcançar avanços significativos na proteção contra enchentes:</p>
+            
+            <div class="beneficios-lista-alternada">
+
+                <div class="beneficio-item-alternado">
+                    <div class="beneficio-visual">
+                        <img src="./src/images/resgate-enchente.jpg" alt="Ilustração de pessoas sendo protegidas">
+                    </div>
+                    <div class="beneficio-texto">
+                        <h3 class="beneficio-titulo">Proteção Ampliada de Vidas e Patrimônios</h3>
+                        <p class="beneficio-descricao">Demonstração de como alertas antecipados e informações precisas podem reduzir drasticamente os riscos para pessoas e minimizar perdas materiais, preservando comunidades e economias locais.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-item-alternado imagem-direita">
+                    <div class="beneficio-visual">
+                        <img src="./src/images/salvamento.jpg" alt="Ilustração de tomada de decisão informada">
+                    </div>
+                    <div class="beneficio-texto">
+                        <h3 class="beneficio-titulo">Tomada de Decisão Ágil e Informada</h3>
+                        <p class="beneficio-descricao">Capacitação de cidadãos e da Defesa Civil com dados (simulados) em tempo real e análises preditivas, permitindo respostas rápidas e eficientes antes, durante e após os eventos críticos.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-item-alternado">
+                    <div class="beneficio-visual">
+                        <img src="./src/images/resilientes.jpeg" alt="Ilustração de comunidade resiliente">
+                    </div>
+                    <div class="beneficio-texto">
+                        <h3 class="beneficio-titulo">Proteção à Cultura de Prevenção e Resiliência</h3>
+                        <p class="beneficio-descricao">Mudança do paradigma reativo para uma abordagem proativa, onde a tecnologia auxilia na educação, preparação e engajamento da comunidade, construindo um futuro mais seguro e resiliente.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-item-alternado imagem-direita">
+                     <div class="beneficio-visual">
+                        <img src="./src/images/gestao.jpg" alt="Ilustração de gestão otimizada">
+                    </div>
+                    <div class="beneficio-texto">
+                        <h3 class="beneficio-titulo">Otimização da Gestão de Riscos e Recursos</h3>
+                        <p class="beneficio-descricao">Ilustração de como a integração de dados e a modelagem de cenários (simulados) podem levar a um uso mais eficiente dos recursos públicos e a um planejamento urbano mais inteligente e adaptado aos desafios climáticos.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-------------------- Fim Seção Beneficios  ----------------------->
+
+    <!-------------------- Fim Rodapé  ----------------------->
+    <footer class="rodape-principal" style="background-color: var(--color-dark); color: var(--color-light); text-align: center; padding: 2rem 0; margin-top: 4rem;">
+        <p>&copy; 2025 AquaDefend. Todos os direitos reservados.</p>
+        <p>Desenvolvido como parte da Global Solution FIAP.</p>
+    </footer>
+    <!-------------------- FIm Rodapé  ----------------------->
+
+        <!-- Chamando o JS externo -->
     <script src="./src/js/script.js"></script>
 </body>
 </html>

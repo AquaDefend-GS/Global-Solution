@@ -1,9 +1,7 @@
-//DECLARANDO AS VARIAVEIS COM DOM
 const sanduiche = document.querySelector('.sanduiche');
 const headerMenu = document.querySelector('.header-menu');
 
 
-//CRIANDO A FUNÇÃO 
 
 function toggleMenu(){
     //Pega o elemento e adiciona na classe do css, ou remove se existir

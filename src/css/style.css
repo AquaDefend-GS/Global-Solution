@@ -20,7 +20,6 @@
     /* Variáveis para o modo escuro */
     --bg-color: #ffffff;
     --text-color: var(--color-dark);
-    --title-color: #ffff;
     --card-bg: #ffffff;
     --card-border: #e0e0e0;
     --section-bg: var(--color-gray-100);
@@ -102,6 +101,7 @@ body.dark-mode.tema-preto {
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Impede o scroll horizontal */
 }
 
 body {
@@ -110,6 +110,34 @@ body {
     line-height: 1.65;
     background-color: var(--bg-color);
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; /* Impede o scroll horizontal */
+    position: relative; /* Para posicionamento de elementos */
+    width: 100%;
+}
+
+/* Remover todas as bolinhas de navegação e indicadores laterais */
+body::before, 
+body::after,
+*::before,
+*::after {
+    content: none !important;
+}
+
+/* Remover qualquer elemento fixo ou absoluto que possa ser uma bolinha de navegação */
+[class*="dot"],
+[class*="bullet"],
+[class*="indicator"],
+[class*="pagination"],
+[id*="dot"],
+[id*="bullet"],
+[id*="indicator"],
+[id*="pagination"] {
+    display: none !important;
+}
+
+/* Remover especificamente elementos circulares posicionados à direita */
+body > *:not(.header):not(.hero):not(.container):not(section):not(footer) {
+    display: none !important;
 }
 
 a {
@@ -267,9 +295,9 @@ img {
 }
 
 
-.hero-content { /* Conteúdo textual principal do Hero */
+.hero-content { 
     text-align: center;
-    padding: 2rem 0; /* Espaçamento para o texto central */
+    padding: 2rem 0; 
 }
 
 .hero-content h1 {
@@ -300,7 +328,7 @@ img {
 /* ----------------- Estilos Gerais para Seções de Conteúdo -----------------*/
 .secao-titulo {
     font-size: 3.2rem;
-    color: var(--color-dark);
+    color: var(--accent-dark);
     text-align: center;
     margin-bottom: 5rem;
     position: relative;
@@ -308,10 +336,8 @@ img {
     font-weight: 700;
     letter-spacing: -0.5px;
 }
-
 body.dark-mode .secao-titulo {
-    color: var(--title-color);
-
+    color: var(--color-light);
 }
 
 .secao-titulo::after {
@@ -448,9 +474,9 @@ body.dark-mode .dor-titulo {
 }
 
 .problema-imagem img:hover {
-    transform: translateY(-10px) scale(1.05); /* <<< ADICIONADO: Move para cima e aumenta ligeiramente */
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2); /* <<< ADICIONADO: Sombra mais pronunciada para dar profundidade */
-    z-index: 10; /* <<< ADICIONADO: Garante que a imagem com hover fique acima das outras, se houver sobreposição visual */
+    transform: translateY(-10px) scale(1.05); 
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    z-index: 10; 
 }
 
 /* ----------------- Fim Seção 1: O Problema -------------------------- */
@@ -735,7 +761,7 @@ body.dark-mode .publico-linha-titulo {
 }
 
 body.dark-mode .beneficio-titulo {
-    color: var(--title-color);
+    color: var(--accent-light);
 }
 
 .beneficio-descricao {
@@ -957,50 +983,71 @@ body.dark-mode .social-link {
     }
 }
 
-@media (max-width: 850px) { /* Breakpoint para menu mobile */
-    .header-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        min-height: 100dvh;
-        background-color: rgba(0, 45, 90, 0.98); /* Fundo do menu mobile */
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2.5rem; /* Espaçamento entre itens no menu mobile */
-        transform: translateX(100%);
-        transition: transform .4s cubic-bezier(0.23, 1, 0.32, 1); /* Transição suave */
-        z-index: 999; /* Abaixo do sanduíche mas acima do resto */
-        padding-top: 6rem; /* Para não ficar atrás do header fixo, se houver */
-    }
-    .header-menu.active {
-        transform: translateX(0);
-    }
-    .header .item-menu { /* Estilo dos itens no menu mobile */
-        font-size: 2.4rem; /* Maiores para toque */
-        color: var(--color-light);
-        padding: 1rem 0;
-        width: 80%;
-        text-align: center;
-    }
-    .header .item-menu:hover,
-    .header .item-menu.active {
-        color: var(--accent-light);
-        background-color: rgba(100, 150, 200, 0.1);
-        border-radius: var(--radius);
-    }
-    .item-menu::after { /* Remover sublinhado no mobile */
-        display: none;
-    }
+/* Estilos para o botão sanduíche */
+.sanduiche {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    display: none;
+}
+
+.barra {
+    display: block;
+    width: 3rem;
+    height: .3rem;
+    background-color: var(--color-light);
+    margin: .5rem auto;
+    border-radius: var(--radius);
+    transition: .5s;
+}
+
+/* Classe para fixar o body quando o menu não está ativo */
+body.menu-closed {
+    overflow: hidden;
+}
+
+@media (max-width: 1024px) {
     .sanduiche {
         display: block;
-        z-index: 1000; /* Acima do menu */
-        padding: 0.5rem; /* Área de toque maior */
+        z-index: 1000;
     }
-    .sanduiche.active .barra:nth-child(1) { transform: translateY(0.9rem) rotate(45deg); }
-    .sanduiche.active .barra:nth-child(2) { opacity: 0; }
-    .sanduiche.active .barra:nth-child(3) { transform: translateY(-0.9rem) rotate(-45deg); }
+    
+    .header-menu {
+        width: 100%;
+        height: 100dvh;
+        background: var(--gradient);
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        right: -100%;
+        gap: 0;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.5s;
+        overflow-y: auto;
+    }
+    
+    .header-menu.active {
+        right: 0;
+    }
+    
+    .sanduiche.active .barra:first-child {
+        transform: translateY(8px) rotate(360deg) rotate(45deg); 
+    }
+    
+    .sanduiche.active .barra:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .sanduiche.active .barra:last-child {
+        transform: translateY(-8px) rotate(-360deg) rotate(-45deg);
+    }
+    
+    .header-menu {
+        gap: 2rem;
+        font-size: 3rem;
+    }
     
     .cores-toggle-container {
         position: fixed;
@@ -1011,6 +1058,12 @@ body.dark-mode .social-link {
         padding: 10px;
         border-radius: 30px;
         z-index: 100;
+    }
+    
+    /* Impedir scroll lateral */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
 
@@ -1052,8 +1105,6 @@ body.dark-mode .social-link {
     
     .publico-linha-icone-wrapper {
         margin-bottom: 1rem;
-        height: 30%;
-        width: 30%;
     }
 }
 
@@ -1080,29 +1131,6 @@ body.dark-mode .social-link {
         width: 100%;
     }
 }
-
-/* Estilos para o botão sanduíche */
-.sanduiche {
-    display: none; /* Escondido em desktop */
-    width: 30px;
-    height: 24px;
-    position: relative;
-    cursor: pointer;
-}
-
-.barra {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--color-light);
-    position: absolute;
-    left: 0;
-    transition: all .3s ease;
-}
-
-.barra:nth-child(1) { top: 0; }
-.barra:nth-child(2) { top: 50%; transform: translateY(-50%); }
-.barra:nth-child(3) { bottom: 0; }
 
 /* Animação para o botão sanduíche */
 @keyframes gridAnimation {

@@ -6,12 +6,22 @@ const azulToggle = document.querySelector('.azul-toggle');
 const verdeAguaToggle = document.querySelector('.verde-agua-toggle');
 const pretoToggle = document.querySelector('.preto-toggle');
 const coresToggles = document.querySelectorAll('.cor-toggle');
+const body = document.body;
 
 // Função para alternar o menu mobile
 function toggleMenu(){
-    //Pega o elemento e adiciona na classe do css, ou remove se existir
+    // Pega o elemento e adiciona na classe do css, ou remove se existir
     sanduiche.classList.toggle('active');
     headerMenu.classList.toggle('active');
+    
+    // Controla o scroll do body quando o menu está aberto/fechado
+    if (headerMenu.classList.contains('active')) {
+        // Menu aberto - permite scroll
+        body.classList.remove('menu-closed');
+    } else {
+        // Menu fechado - bloqueia scroll
+        body.classList.add('menu-closed');
+    }
 }
 
 // Evento para o botão sanduíche
@@ -100,6 +110,9 @@ modoEscuroToggle.addEventListener('click', toggleDarkMode);
 document.addEventListener('DOMContentLoaded', () => {
     checkDarkModePreference();
     checkColorThemePreference();
+    
+    // Adiciona a classe menu-closed ao body por padrão para bloquear o scroll
+    body.classList.add('menu-closed');
 });
 
 //DECLARANDO UM ARRAY DE IMAGENS 

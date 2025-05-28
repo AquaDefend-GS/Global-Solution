@@ -464,6 +464,73 @@ img {
 }
 /* ----------------- Fim Seção 2: Tecnologias Utilizadas ---------------------- */
 
+/* ----------------- Seção 3: Objetivos -------------------------- */
+.secao-objetivos {
+    padding: 8rem 0;
+    background-color: var(--color-gray-100); 
+}
+
+.secao-objetivos .secao-subtitulo { /* Reutilizando e ajustando o estilo do subtítulo da seção */
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    color: #555;
+    text-align: center;
+    max-width: 800px; /* Um pouco mais largo para o texto dos objetivos */
+    margin: -3rem auto 5rem auto;
+    line-height: 1.65;
+}
+
+.objetivos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5rem; /* Espaçamento entre os cards de objetivos */
+    justify-content: center;
+}
+
+.objetivo-item {
+    background-color: #ffffff; /* Fundo dos cards */
+    border: 1px solid #dadada; /* Borda um pouco mais escura */
+    border-radius: var(--radius);
+    padding: 2.5rem; /* Padding interno */
+    flex: 1 1 320px; /* Base para os cards, para cerca de 3 por linha */
+    max-width: 370px; /* Largura máxima do card */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    display: flex; /* Para alinhar ícone e texto de forma mais controlada se necessário */
+    flex-direction: column; /* Conteúdo do card empilhado verticalmente */
+    align-items: center; /* Centraliza o conteúdo (ícone, título, texto) */
+    text-align: center; /* Centraliza o texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.objetivo-item:hover {
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.objetivo-icone-img { 
+    width: 65px;  
+    height: 65px;
+    margin-bottom: 2rem; 
+    object-fit: contain; 
+}
+
+.objetivo-titulo {
+    font-family: var(--font-primary);
+    font-size: 2rem; 
+    color: var(--color-blue-800);
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+}
+
+.objetivo-descricao {
+    font-family: var(--font-secondary);
+    font-size: 1.55rem; 
+    color: var(--color-dark);
+    line-height: 1.7;
+}
+/* ----------------- Fim Seção 3: Objetivos ---------------------- */
+
+
 
 @keyframes gridAnimation {
     from{

@@ -259,7 +259,8 @@ img {
 }
 
 .header .logo {
-    max-width: 180px; /* Tamanho do logo */
+    max-width: 180px; 
+    margin-right: 50px;
     height: auto;
 }
 
@@ -1143,3 +1144,208 @@ body.menu-closed {
         transform: translateY(0);
     }
 }
+
+/* ----------------- Seção 6: No Dia a Dia (Layout de Fluxo Vertical) -------------------------- */
+.secao-dia-a-dia {
+    padding: 8rem 0;
+    background-color: var(--bg-color); /* Usando variável de cor do tema */
+}
+
+.secao-dia-a-dia .secao-subtitulo {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    color: var(--text-color); /* Usando variável de cor do tema */
+    text-align: center;
+    max-width: 850px;
+    margin: -3rem auto 6rem auto;
+    line-height: 1.7;
+}
+
+.fluxo-dia-a-dia-container {
+    position: relative; /* Para a linha de conexão vertical */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Espaço entre as etapas */
+}
+
+/* Linha vertical conectora (opcional, mas dá um efeito de fluxo) */
+.fluxo-dia-a-dia-container::before {
+    content: '';
+    position: absolute;
+    left: 39px; /* Ajuste para alinhar com o centro do .etapa-marcador */
+    top: 20px;   /* Começa um pouco abaixo do topo do primeiro marcador */
+    bottom: 20px; /* Termina um pouco acima do final do último marcador */
+    width: 2px;
+    background-color: var(--accent-light); /* Usando variável de cor do tema */
+    z-index: 1;
+}
+
+.fluxo-etapa {
+    display: flex;
+    align-items: flex-start; /* Alinha o topo do marcador com o topo do conteúdo */
+    gap: 2.5rem; /* Espaço entre o marcador e o conteúdo da etapa */
+    position: relative; /* Para o marcador ficar sobre a linha */
+    z-index: 2; /* Para os elementos da etapa ficarem acima da linha ::before */
+    padding: 1rem 0; /* Pequeno padding vertical para cada etapa */
+    transition: transform 0.3s ease; /* Adicionando transição suave */
+}
+
+.fluxo-etapa:hover {
+    transform: translateX(5px); /* Efeito de hover sutil */
+}
+
+.etapa-marcador-wrapper {
+    flex-shrink: 0; /* Impede que o wrapper do marcador encolha */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.etapa-marcador {
+    width: 80px;  /* Largura do círculo do marcador */
+    height: 80px; /* Altura do círculo do marcador */
+    background-color: var(--accent-color); /* Usando variável de cor do tema */
+    color: var(--color-light);
+    font-size: 2.8rem; /* Tamanho do número */
+    font-weight: 700;
+    font-family: var(--font-primary);
+    border-radius: 50%; /* Faz o marcador ser um círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais neutra */
+    margin-bottom: 0.5rem; /* Espaço se houver um ícone abaixo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+.fluxo-etapa:hover .etapa-marcador {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.etapa-icone-visual {
+    width: 70px;
+    height: 70px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.fluxo-etapa:hover .etapa-icone-visual {
+    transform: scale(1.1);
+}
+
+.etapa-conteudo {
+    flex-grow: 1; /* Conteúdo ocupa o restante do espaço */
+    background-color: var(--accent-bg); /* Usando variável de cor do tema */
+    padding: 2rem 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+.fluxo-etapa:hover .etapa-conteudo {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.etapa-titulo {
+    font-family: var(--font-primary);
+    font-size: 2.1rem;
+    color: var(--accent-dark); /* Usando variável de cor do tema */
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+body.dark-mode .etapa-titulo {
+    color: var(--accent-light); /* Ajuste para modo escuro */
+}
+
+.etapa-descricao {
+    font-family: var(--font-secondary);
+    font-size: 1.65rem;
+    color: var(--text-color); /* Usando variável de cor do tema */
+    line-height: 1.7;
+}
+
+/* Adicionando responsividade para a seção Dia a Dia */
+@media (max-width: 768px) {
+    .secao-dia-a-dia {
+        padding: 6rem 0;
+    }
+    
+    .secao-dia-a-dia .secao-subtitulo {
+        font-size: 1.7rem;
+        margin: -2rem auto 4rem auto;
+    }
+    
+    .fluxo-dia-a-dia-container::before {
+        left: 29px; /* Ajuste para telas menores */
+    }
+    
+    .fluxo-etapa {
+        gap: 1.5rem;
+    }
+    
+    .etapa-marcador {
+        width: 60px;
+        height: 60px;
+        font-size: 2.2rem;
+    }
+    
+    .etapa-icone-visual {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .etapa-conteudo {
+        padding: 1.5rem 2rem;
+    }
+    
+    .etapa-titulo {
+        font-size: 1.9rem;
+    }
+    
+    .etapa-descricao {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .secao-dia-a-dia {
+        padding: 5rem 0;
+    }
+    
+    .fluxo-dia-a-dia-container::before {
+        left: 24px; /* Ajuste para telas muito pequenas */
+    }
+    
+    .fluxo-etapa {
+        gap: 1.2rem;
+    }
+    
+    .etapa-marcador {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+    
+    .etapa-icone-visual {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .etapa-conteudo {
+        padding: 1.2rem 1.5rem;
+    }
+    
+    .etapa-titulo {
+        font-size: 1.7rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .etapa-descricao {
+        font-size: 1.4rem;
+        line-height: 1.6;
+    }
+}
+
+/* ----------------- Fim Seção 6: No Dia a Dia ---------------------- */

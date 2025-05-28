@@ -101,21 +101,21 @@ body.dark-mode.tema-preto {
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Impede o scroll horizontal */
+    overflow-x: hidden; 
 }
 
 body {
-    font-size: 1.6rem; /* 16px */
+    font-size: 1.6rem;
     color: var(--text-color);
     line-height: 1.65;
     background-color: var(--bg-color);
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden; /* Impede o scroll horizontal */
-    position: relative; /* Para posicionamento de elementos */
+    overflow-x: hidden; 
+    position: relative; 
     width: 100%;
 }
 
-/* Remover todas as bolinhas de navegação e indicadores laterais */
+
 body::before, 
 body::after,
 *::before,
@@ -156,8 +156,8 @@ img {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 2rem;
-    animation: gridAnimation both;
-    animation-timeline: view(130% 5%); 
+    animation: gridAnimation1 both;
+    animation-timeline: view(130% 5%);
 }
 
 /* ----------------- Fim Da Formatação Base CSS -----------------*/
@@ -471,7 +471,7 @@ body.dark-mode .dor-titulo {
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; 
     position: relative;
     animation: gridAnimation both;
-    animation-timeline: view(70% 5%); 
+    animation-timeline: view(70% 5%);
 }
 
 .problema-imagem img:hover {
@@ -674,7 +674,7 @@ body.dark-mode .publico-linha-icone-wrapper {
 }
 
 .publico-linha-icone {
-    width: 100%; 
+    width: 50%; 
     height: auto;
 }
 
@@ -1133,16 +1133,14 @@ body.menu-closed {
     }
 }
 
-/* Animação para o botão sanduíche */
+@keyframes gridAnimation1 {
+    from { opacity: 0; scale: .9; }
+    to { opacity: 1; scale: 1; }
+}
+
 @keyframes gridAnimation {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* ----------------- Seção 6: No Dia a Dia (Layout de Fluxo Vertical) -------------------------- */

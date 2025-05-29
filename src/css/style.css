@@ -11,13 +11,13 @@
     --color-dark: #333333;
     --color-blue-100: rgb(100, 150, 200);
     --color-blue-800: rgb(0, 45, 90);
-    --color-blue-600: #0056b3; /* Azul para destaque menor com bom contraste */
-    --color-blue-annotation-bg: #e9f3fb; /* Azul claro para fundo da "anotação" */
-    --color-gray-100: #f8f9fa; /* Fundo da seção problema */
+    --color-blue-600: #0056b3; 
+    --color-blue-annotation-bg: #e9f3fb; 
+    --color-gray-100: #f8f9fa; 
     --radius: 8px;
-    --gradient: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, .45)); /* Mais escuro no gradiente */
+    --gradient: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, .45)); 
     
-    /* Variáveis para o modo escuro */
+    
     --bg-color: #ffffff;
     --text-color: var(--color-dark);
     --card-bg: #ffffff;
@@ -33,7 +33,7 @@
     --footer-bg: var(--color-blue-800);
     --footer-text: var(--color-light);
     
-    /* Variáveis para os temas de cores */
+    
     --accent-color: var(--color-blue-600);
     --accent-light: var(--color-blue-100);
     --accent-dark: var(--color-blue-800);
@@ -123,7 +123,7 @@ body::after,
     content: none !important;
 }
 
-/* Remover qualquer elemento fixo ou absoluto que possa ser uma bolinha de navegação */
+
 [class*="dot"],
 [class*="bullet"],
 [class*="indicator"],
@@ -135,14 +135,14 @@ body::after,
     display: none !important;
 }
 
-/* Remover especificamente elementos circulares posicionados à direita */
+
 body > *:not(.header):not(.hero):not(.container):not(section):not(footer) {
     display: none !important;
 }
 
 a {
     text-decoration: none;
-    font-weight: 600; /* Ajustado para links em geral */
+    font-weight: 600; 
     transition: color .3s ease;
 }
 
@@ -234,9 +234,9 @@ img {
 /* ----------------- Hero da página -------------------------- */
 .hero {
     width: 100%;
-    min-height: 100dvh; /* Altura total da tela */
-    padding: 2.5rem; /* Padding ajustado */
-    background-image: var(--gradient), url(../images/capa1.jpg); /* Certifique-se que o caminho está correto */
+    min-height: 100dvh; 
+    padding: 2.5rem; 
+    background-image: var(--gradient), url(../images/capa1.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -244,17 +244,17 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center; /* Centraliza conteúdo se for menor que a altura */
+    align-items: center; 
 }
 
 .header {
-    width: 100%; /* Header ocupa toda a largura */
-    max-width: 1200px; /* Limita largura do conteúdo do header */
-    padding: 1rem 0; /* Padding vertical para o header */
+    width: 100%; 
+    max-width: 1200px; 
+    padding: 1rem 0; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Para o menu mobile */
+    position: relative; 
     z-index: 100;
 }
 
@@ -266,7 +266,7 @@ img {
 
 .header-menu {
     display: flex;
-    gap: 2.5rem; /* Espaço entre itens do menu */
+    gap: 2.5rem; 
 }
 
 .item-menu {
@@ -308,20 +308,20 @@ img {
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
-.hero-content h1 span { /* Span dentro do H1 do Hero */
+.hero-content h1 span { 
     color: var(--accent-light);
 }
 
 .hero-content p {
     font-size: clamp(1.8rem, 3.5vw, 2.3rem);
-    font-weight: 400; /* Texto de apoio mais leve */
+    font-weight: 400; 
     line-height: 1.5;
     max-width: 700px;
     margin: 0 auto;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-.hero-footer-placeholder { /* Apenas para empurrar o conteúdo para cima se necessário */
+.hero-footer-placeholder { 
     min-height: 50px;
 }
 /* ----------------- Fim Hero da página -------------------------- */
@@ -355,7 +355,7 @@ body.dark-mode .secao-titulo {
 
 /* ----------------- Seção 1: O Problema -------------------------- */
 .secao-problema {
-    padding: 8rem 0; /* Aumentado padding vertical */
+    padding: 8rem 0; 
     background-color: var(--section-bg);
 }
 
@@ -369,13 +369,13 @@ body.dark-mode .secao-titulo {
     flex: 1 1 60%;
 }
 
-.problema-texto > p { /* Parágrafos iniciais e o último */
+.problema-texto > p { 
     font-size: 1.75rem;
     margin-bottom: 2.5rem;
     color: var(--text-color);
     line-height: 1.75;
 }
-.problema-texto > p:last-of-type { /* Estilo para o parágrafo final da AquaDefend */
+.problema-texto > p:last-of-type { 
     margin-top: 4rem;
     font-style: italic;
     font-size: 1.7rem;
@@ -404,7 +404,7 @@ body.dark-mode .problema-texto .destaque-menor {
     color: var(--accent-light);
 }
 
-.subtitulo-problema { /* "As Dores que Buscamos Sanar:" */
+.subtitulo-problema { 
     font-size: 2.8rem;
     color: var(--accent-dark);
     margin-top: 4.5rem;
@@ -417,7 +417,7 @@ body.dark-mode .subtitulo-problema {
     color: var(--accent-light);
 }
 
-.dor-item { /* Cards Azuis */
+.dor-item { 
     background-color: var(--accent-bg);
     padding: 2.5rem 3rem;
     border-radius: var(--radius);
@@ -456,9 +456,9 @@ body.dark-mode .dor-titulo {
 .problema-imagem {
     flex: 1 1 35%;
     display: flex;
-    flex-direction: column; /* Empilha as imagens */
-    align-items: stretch;   /* Imagens ocupam a largura */
-    gap: 7.5rem;           /* Espaço entre as imagens */
+    flex-direction: column; 
+    align-items: stretch;   
+    gap: 7.5rem;         
 }
 
 .problema-imagem img {
@@ -536,7 +536,7 @@ body.dark-mode .dor-titulo {
 
 .tecnologia-titulo {
     font-family: var(--font-primary);
-    font-size: 2rem; /* Tamanho do título da tecnologia */
+    font-size: 2rem; 
     color: var(--accent-dark);
     margin-bottom: 1.5rem;
     font-weight: 700;
@@ -560,12 +560,12 @@ body.dark-mode .tecnologia-titulo {
     background-color: var(--section-bg); 
 }
 
-.secao-objetivos .secao-subtitulo { /* Reutilizando e ajustando o estilo do subtítulo da seção */
+.secao-objetivos .secao-subtitulo { 
     font-family: var(--font-secondary);
     font-size: 1.8rem;
     color: var(--text-color);
     text-align: center;
-    max-width: 800px; /* Um pouco mais largo para o texto dos objetivos */
+    max-width: 800px; 
     margin: -3rem auto 5rem auto;
     line-height: 1.65;
 }
@@ -573,22 +573,22 @@ body.dark-mode .tecnologia-titulo {
 .objetivos-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 3.5rem; /* Espaçamento entre os cards de objetivos */
+    gap: 3.5rem; 
     justify-content: center;
 }
 
 .objetivo-item {
-    background-color: var(--card-bg); /* Fundo dos cards */
-    border: 1px solid var(--card-border); /* Borda um pouco mais escura */
+    background-color: var(--card-bg); 
+    border: 1px solid var(--card-border); 
     border-radius: var(--radius);
-    padding: 2.5rem; /* Padding interno */
-    flex: 1 1 320px; /* Base para os cards, para cerca de 3 por linha */
-    max-width: 370px; /* Largura máxima do card */
+    padding: 2.5rem; 
+    flex: 1 1 320px; 
+    max-width: 370px; 
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    display: flex; /* Para alinhar ícone e texto de forma mais controlada se necessário */
-    flex-direction: column; /* Conteúdo do card empilhado verticalmente */
-    align-items: center; /* Centraliza o conteúdo (ícone, título, texto) */
-    text-align: center; /* Centraliza o texto */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -598,7 +598,7 @@ body.dark-mode .tecnologia-titulo {
 }
 
 .objetivo-icone-img { 
-    width: 65px;  
+    width: 65px;   
     height: 65px;
     margin-bottom: 2rem; 
     object-fit: contain; 
@@ -930,11 +930,11 @@ body.dark-mode .social-link {
 
 /* ----------------- Rodapé Principal -------------------------------- */
 .rodape-principal {
-    background-color: var(--footer-bg); /* Cor de fundo do rodapé */
+    background-color: var(--footer-bg); 
     color: var(--footer-text);
     text-align: center;
     padding: 3rem 1rem;
-    margin-top: 6rem; /* Espaço acima do rodapé */
+    margin-top: 6rem; 
 }
 .rodape-principal p {
     margin-bottom: 0.5rem;
@@ -945,7 +945,7 @@ body.dark-mode .social-link {
 }
 
 /* ----------------- Responsividade -------------------------- */
-@media (max-width: 992px) { /* Tablets */
+@media (max-width: 992px) { 
     .problema-conteudo {
         gap: 3.5rem;
         align-items: center;
@@ -984,7 +984,7 @@ body.dark-mode .social-link {
     }
 }
 
-/* Estilos para o botão sanduíche */
+
 .sanduiche {
     cursor: pointer;
     position: relative;
@@ -1002,7 +1002,7 @@ body.dark-mode .social-link {
     transition: .5s;
 }
 
-/* Classe para fixar o body quando o menu não está ativo */
+
 body.menu-closed {
     overflow: hidden;
 }
@@ -1061,15 +1061,15 @@ body.menu-closed {
         z-index: 100;
     }
     
-    /* Impedir scroll lateral */
+    
     html, body {
         max-width: 100%;
         overflow-x: hidden;
     }
 }
 
-@media (max-width: 768px) { /* Mobile Geral */
-    body { font-size: 1.5rem; } /* Ajuste base de fonte para mobile */
+@media (max-width: 768px) { 
+    body { font-size: 1.5rem; } 
     .container { padding: 0 1.5rem; }
     .secao-titulo { font-size: 2.6rem; margin-bottom: 4rem; }
 
@@ -1079,16 +1079,16 @@ body.menu-closed {
     }
     .problema-texto {
         flex-basis: 100%;
-        order: 2; /* Texto aparece depois da imagem em mobile */
-        margin-top: 3rem; /* Espaço se imagem vier primeiro */
+        order: 2; 
+        margin-top: 3rem; 
     }
      .problema-imagem {
         flex-basis: 100%;
         width: 100%;
-        max-width: 480px; /* Limite da largura da coluna de imagem */
-        order: 1; /* Imagem primeiro em mobile */
-        margin: 0 auto; /* Centralizar coluna de imagem */
-        gap: 1.5rem; /* Espaço entre imagens */
+        max-width: 480px; 
+        order: 1; 
+        margin: 0 auto; 
+        gap: 1.5rem; 
     }
     .problema-imagem img { max-height: 220px; }
 
@@ -1109,12 +1109,12 @@ body.menu-closed {
     }
 }
 
-@media (max-width: 480px) { /* Celulares menores */
-    .secao-problema { padding: 6rem 0; } /* Aumentado padding */
+@media (max-width: 480px) { 
+    .secao-problema { padding: 6rem 0; } 
     .secao-titulo { font-size: 2.2rem; }
     .subtitulo-problema { font-size: 2.1rem; }
     .dor-titulo { font-size: 1.8rem; }
-    .dor-item { padding: 1.8rem; } /* Padding ajustado */
+    .dor-item { padding: 1.8rem; } 
     .problema-texto > p, .dor-descricao { font-size: 1.55rem; }
     .problema-imagem img { max-height: 180px; }
     
@@ -1146,13 +1146,13 @@ body.menu-closed {
 /* ----------------- Seção 6: No Dia a Dia (Layout de Fluxo Vertical) -------------------------- */
 .secao-dia-a-dia {
     padding: 8rem 0;
-    background-color: var(--bg-color); /* Usando variável de cor do tema */
+    background-color: var(--bg-color); 
 }
 
 .secao-dia-a-dia .secao-subtitulo {
     font-family: var(--font-secondary);
     font-size: 1.8rem;
-    color: var(--text-color); /* Usando variável de cor do tema */
+    color: var(--text-color); 
     text-align: center;
     max-width: 850px;
     margin: -3rem auto 6rem auto;
@@ -1160,60 +1160,60 @@ body.menu-closed {
 }
 
 .fluxo-dia-a-dia-container {
-    position: relative; /* Para a linha de conexão vertical */
+    position: relative; 
     display: flex;
     flex-direction: column;
-    gap: 3rem; /* Espaço entre as etapas */
+    gap: 3rem; 
 }
 
-/* Linha vertical conectora (opcional, mas dá um efeito de fluxo) */
+
 .fluxo-dia-a-dia-container::before {
     content: '';
     position: absolute;
-    left: 39px; /* Ajuste para alinhar com o centro do .etapa-marcador */
-    top: 20px;   /* Começa um pouco abaixo do topo do primeiro marcador */
-    bottom: 20px; /* Termina um pouco acima do final do último marcador */
+    left: 39px; 
+    top: 20px;   
+    bottom: 20px; 
     width: 2px;
-    background-color: var(--accent-light); /* Usando variável de cor do tema */
+    background-color: var(--accent-light); 
     z-index: 1;
 }
 
 .fluxo-etapa {
     display: flex;
-    align-items: flex-start; /* Alinha o topo do marcador com o topo do conteúdo */
-    gap: 2.5rem; /* Espaço entre o marcador e o conteúdo da etapa */
-    position: relative; /* Para o marcador ficar sobre a linha */
-    z-index: 2; /* Para os elementos da etapa ficarem acima da linha ::before */
-    padding: 1rem 0; /* Pequeno padding vertical para cada etapa */
-    transition: transform 0.3s ease; /* Adicionando transição suave */
+    align-items: flex-start; 
+    gap: 2.5rem; 
+    position: relative; 
+    z-index: 2; 
+    padding: 1rem 0; 
+    transition: transform 0.3s ease; 
 }
 
 .fluxo-etapa:hover {
-    transform: translateX(5px); /* Efeito de hover sutil */
+    transform: translateX(5px); 
 }
 
 .etapa-marcador-wrapper {
-    flex-shrink: 0; /* Impede que o wrapper do marcador encolha */
+    flex-shrink: 0; 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .etapa-marcador {
-    width: 80px;  /* Largura do círculo do marcador */
-    height: 80px; /* Altura do círculo do marcador */
-    background-color: var(--accent-color); /* Usando variável de cor do tema */
+    width: 80px;  
+    height: 80px; 
+    background-color: var(--accent-color); 
     color: var(--color-light);
-    font-size: 2.8rem; /* Tamanho do número */
+    font-size: 2.8rem; 
     font-weight: 700;
     font-family: var(--font-primary);
-    border-radius: 50%; /* Faz o marcador ser um círculo */
+    border-radius: 50%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais neutra */
-    margin-bottom: 0.5rem; /* Espaço se houver um ícone abaixo */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 0.5rem; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .fluxo-etapa:hover .etapa-marcador {
@@ -1225,7 +1225,7 @@ body.menu-closed {
     width: 70px;
     height: 70px;
     margin-top: 1rem;
-    transition: transform 0.3s ease; /* Transição suave */
+    transition: transform 0.3s ease; 
 }
 
 .fluxo-etapa:hover .etapa-icone-visual {
@@ -1233,12 +1233,12 @@ body.menu-closed {
 }
 
 .etapa-conteudo {
-    flex-grow: 1; /* Conteúdo ocupa o restante do espaço */
-    background-color: var(--accent-bg); /* Usando variável de cor do tema */
+    flex-grow: 1; 
+    background-color: var(--accent-bg); 
     padding: 2rem 2.5rem;
     border-radius: var(--radius);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .fluxo-etapa:hover .etapa-conteudo {
@@ -1248,23 +1248,23 @@ body.menu-closed {
 .etapa-titulo {
     font-family: var(--font-primary);
     font-size: 2.1rem;
-    color: var(--accent-dark); /* Usando variável de cor do tema */
+    color: var(--accent-dark); 
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
 body.dark-mode .etapa-titulo {
-    color: var(--accent-light); /* Ajuste para modo escuro */
+    color: var(--accent-light); 
 }
 
 .etapa-descricao {
     font-family: var(--font-secondary);
     font-size: 1.65rem;
-    color: var(--text-color); /* Usando variável de cor do tema */
+    color: var(--text-color); 
     line-height: 1.7;
 }
 
-/* Adicionando responsividade para a seção Dia a Dia */
+
 @media (max-width: 768px) {
     .secao-dia-a-dia {
         padding: 6rem 0;
@@ -1276,7 +1276,7 @@ body.dark-mode .etapa-titulo {
     }
     
     .fluxo-dia-a-dia-container::before {
-        left: 29px; /* Ajuste para telas menores */
+        left: 29px; 
     }
     
     .fluxo-etapa {
@@ -1313,7 +1313,7 @@ body.dark-mode .etapa-titulo {
     }
     
     .fluxo-dia-a-dia-container::before {
-        left: 24px; /* Ajuste para telas muito pequenas */
+        left: 24px; 
     }
     
     .fluxo-etapa {

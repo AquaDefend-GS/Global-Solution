@@ -258,8 +258,10 @@ img {
     z-index: 100;
 }
 
+
+
 .header .logo {
-    max-width: 180px; 
+    max-width: 125px; 
     margin-right: 50px;
     height: auto;
 }

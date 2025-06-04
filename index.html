@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./src/css/fonts.css">
     <!-- Chamando o CSS Style -->
     <link rel="stylesheet" href="./src/css/style.css">
+    <!-- CSS específico do Quiz -->
+    <link rel="stylesheet" href="./src/css/quiz.css">
 
     </head>
     <!-------------------- Hero da página ----------------------->
@@ -25,6 +27,7 @@
                     <li><a href="#publico-alvo" class="item-menu">Público Alvo</a></li>
                     <li><a href="#beneficios" class="item-menu">Benefícios</a></li>
                     <li><a href="#dia-a-dia" class="item-menu">No Dia a Dia</a></li>
+                    <li><a href="#quiz" class="item-menu">Quiz</a></li>
                 </ul>
             </nav>
             <div class="cores-toggle-container">
@@ -348,6 +351,72 @@
         </div>
     </section>
     <!-------------------- Fim Seção Dia a Dia ----------------------->
+      <!-------------------- Seção Quiz ----------------------->
+      <section class="secao-quiz" id="quiz">
+        <div class="container">
+            <h2 class="secao-titulo">Quiz sobre Prevenção de Enchentes</h2>
+            
+            <div class="quiz-container">
+                <!-- Tela inicial do quiz -->
+                <div id="quiz-inicio" class="quiz-card">
+                    <h3>Bem-vindo ao Quiz AquaDefend!</h3>
+                    <p>Teste seus conhecimentos sobre prevenção de enchentes e o projeto AquaDefend. O quiz contém 10 perguntas sobre os temas abordados no site.</p>
+                    <p>Ao final, você receberá sua pontuação e explicações sobre as respostas corretas.</p>
+                    <button id="iniciar-quiz" class="quiz-btn">Iniciar Quiz</button>
+                </div>
+
+                <!-- Container das perguntas -->
+                <div id="quiz-perguntas" class="quiz-card" style="display: none;">
+                    <div class="quiz-progresso">
+                        <div class="quiz-progresso-texto">Pergunta <span id="pergunta-atual">1</span> de <span id="total-perguntas">10</span></div>
+                        <div class="quiz-progresso-barra-container">
+                            <div class="quiz-progresso-barra"></div>
+                        </div>
+                    </div>
+                    
+                    <h3 id="pergunta-texto">Texto da pergunta aqui</h3>
+                    
+                    <div class="quiz-opcoes">
+                        <!-- As opções serão inseridas dinamicamente pelo JavaScript -->
+                    </div>
+                    
+                    <div class="quiz-feedback" style="display: none;">
+                        <div class="quiz-feedback-icone"></div>
+                        <div class="quiz-feedback-texto"></div>
+                    </div>
+                    
+                    <button id="proxima-pergunta" class="quiz-btn" style="display: none;">Próxima Pergunta</button>
+                </div>
+
+                <!-- Tela de resultados -->
+                <div id="quiz-resultados" class="quiz-card" style="display: none;">
+                    <h3>Resultados do Quiz</h3>
+                    
+                    <div class="quiz-pontuacao">
+                        <div class="quiz-pontuacao-circulo">
+                            <span id="pontuacao-valor">0</span>/<span id="pontuacao-total">10</span>
+                        </div>
+                        <div class="quiz-pontuacao-texto">
+                            <span id="pontuacao-mensagem">Mensagem baseada na pontuação</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-resumo">
+                        <h4>Resumo das Respostas</h4>
+                        <div id="quiz-resumo-lista">
+                            <!-- O resumo será inserido dinamicamente pelo JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-botoes">
+                        <button id="reiniciar-quiz" class="quiz-btn">Tentar Novamente</button>
+                        <a href="#home" class="quiz-btn quiz-btn-secundario">Voltar ao Topo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------- Fim Seção Quiz ----------------------->
 
     <!-------------------- Seção Contato ----------------------->
     <section class="secao-contato" id="contato">
@@ -436,5 +505,6 @@
 
     <!-- Chamando o JavaScript -->
     <script src="./src/js/script.js"></script>
+    <script type="module" src="./src/js/quiz.js"></script>
 </body>
 </html>

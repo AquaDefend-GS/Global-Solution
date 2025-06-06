@@ -1,0 +1,132 @@
+/* Estilos para o mapa */
+.secao-mapa {
+    padding: 8rem 0;
+    background-color: var(--section-bg);
+}
+
+.secao-mapa .secao-subtitulo {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    text-align: center;
+    max-width: 800px;
+    margin: -3rem auto 5rem auto;
+    line-height: 1.65;
+}
+
+.mapa-container {
+    width: 100%;
+    height: 600px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    margin-bottom: 3rem;
+}
+
+#mapa {
+    width: 100%;
+    height: 100%;
+}
+
+.info-titulo {
+    padding: 6px 8px;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.info-titulo h4 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.legenda {
+    padding: 6px 8px;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.legenda h4 {
+    margin: 0 0 8px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.legenda i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+    border-radius: 50%;
+    border: 1px solid #333;
+}
+
+.legenda .linha-legenda {
+    margin-top: 8px;
+}
+
+.nivel-risco {
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Modo escuro */
+body.dark-mode .info-titulo,
+body.dark-mode .legenda {
+    background: rgba(30, 30, 30, 0.8);
+    color: #e0e0e0;
+}
+
+body.dark-mode .info-titulo h4,
+body.dark-mode .legenda h4 {
+    color: #e0e0e0;
+}
+
+.mapa-info {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    margin-top: 3rem;
+}
+
+.mapa-info h3 {
+    font-size: 2.2rem;
+    color: var(--accent-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+body.dark-mode .mapa-info h3 {
+    color: var(--accent-light);
+}
+
+.mapa-info p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+}
+
+.mapa-info ul {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.mapa-info li {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.75;
+    margin-bottom: 0.5rem;
+}
+
